@@ -13,7 +13,7 @@
             Width="100px"
             Height="100px"
             Command="{Binding NavigateHomeCommand}"
-            Content="segg" />
+            Content="sdf" />
     </Grid>
 
 
