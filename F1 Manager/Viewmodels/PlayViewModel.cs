@@ -15,9 +15,9 @@ namespace F1_Manager.Viewmodels
         public string WelcomeMessage => "Play";
         public ICommand NavigatePlayCommand { get; }
 
-        public PlayViewModel(NavigationStore navigatedStore)
+        public PlayViewModel(NavigationStore navigationStore)
         {
-            NavigatePlayCommand = new NavigateHomeCommand(navigatedStore);
+            NavigatePlayCommand = new NavigateCommand<PlayViewModel>(navigationStore, () => new PlayViewModel(navigationStore));
         }
     }
 }

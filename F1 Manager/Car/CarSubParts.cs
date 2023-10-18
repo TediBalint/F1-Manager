@@ -71,5 +71,4 @@ namespace F1_Manager.Car
         public double weight { get; set; }
         public double maxWeight { get; set; }
     }
-
 }

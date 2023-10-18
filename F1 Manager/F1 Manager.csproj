@@ -8,4 +8,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Car\FrontWingModules\" />
+    <Folder Include="Car\FrontSuspensionModules\" />
+    <Folder Include="Car\FloorModules\" />
+    <Folder Include="Car\HaloModules\" />
+    <Folder Include="Car\AirIntakeModules\" />
+    <Folder Include="Car\GearBoxModules\" />
+    <Folder Include="Car\BrakeModules\" />
+    <Folder Include="Car\SteeringWheelModules\" />
+    <Folder Include="Car\TyreModules\FrontTyres\" />
+    <Folder Include="Car\TyreModules\RearTyres\" />
+    <Folder Include="Car\WheelCoverModules\" />
+    <Folder Include="Car\RearDiffuserModules\" />
+    <Folder Include="Car\SidePodModules\" />
+    <Folder Include="Car\RearSuspensionModules\" />
+    <Folder Include="Car\RearWingModules\" />
+  </ItemGroup>
+
 </Project>

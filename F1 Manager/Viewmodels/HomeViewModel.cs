@@ -12,10 +12,15 @@ namespace F1_Manager.Viewmodels
 	public class HomeViewModel : ViewModelBase
 	{
 		public string welcomeMessage => "Welcome to my applciation";
-		public ICommand NavigateCarViewCommand { get; }
-        public HomeViewModel(Stores.NavigationStore navigationStore)
+		public ICommand NavigateCarCommand { get; }
+        public ICommand NavigatePlayCommand { get; }
+		public ICommand NavigateCreateCarCommand { get; }
+
+		public HomeViewModel(Stores.NavigationStore navigationStore)
         {
-            NavigateCarViewCommand = new NavigateCarViewCommand(navigationStore);
-        }
+            NavigateCarCommand = new NavigateCommand<CarViewModel>(navigationStore, () => new CarViewModel(navigationStore));
+            NavigatePlayCommand = new NavigateCommand<PlayViewModel>(navigationStore, () => new PlayViewModel(navigationStore));
+            NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
+		}
     }
 }

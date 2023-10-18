@@ -44,15 +44,15 @@
                 Content="Play"
                 Style="{StaticResource HomeButton}" />
             <Button
-                Command="{Binding NavigateCarViewCommand}"
+                Command="{Binding NavigateCarCommand}"
                 Content="Career"
                 Style="{StaticResource HomeButton}" />
             <Button
-                Command="{Binding NavigateCarViewCommand}"
+                Command="{Binding NavigateCreateCarCommand}"
                 Content="Settings"
                 Style="{StaticResource HomeButton}" />
             <Button
-                Command="{Binding NavigateCarViewCommand}"
+                Command="{Binding NavigateCarCommand}"
                 Content="Quit"
                 Style="{StaticResource HomeButton}" />
         </StackPanel>

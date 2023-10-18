@@ -23,6 +23,9 @@
             <DataTemplate DataType="{x:Type viewmodels:PlayViewModel}">
                 <views:PlayView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateCarViewModel}">
+                <views:CreateCarView />
+            </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>
 </Window>
