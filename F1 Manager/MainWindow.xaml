@@ -2,6 +2,8 @@
     x:Class="F1_Manager.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:carModels="clr-namespace:F1_Manager.Viewmodels.CreateCarViewModels"
+    xmlns:carViews="clr-namespace:F1_Manager.Views.CreateCarViews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:F1_Manager"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -25,6 +27,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:CreateCarViewModel}">
                 <views:CreateCarView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type carModels:CreateEngineViewModel}">
+                <carViews:CreateEngine />
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>

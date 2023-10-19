@@ -5,8 +5,53 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:F1_Manager.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="1080"
+    d:DesignWidth="1920"
     mc:Ignorable="d">
-    <Grid Background="#333" />
+    <Grid Background="#333">
+        <Grid Margin="10">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="36pt" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontFamily" Value="Verdana" />
+                    <Setter Property="Margin" Value="10,10,10,10" />
+                    <Setter Property="Foreground" Value="#DDD" />
+                    <Setter Property="Background" Value="#888" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Button
+                Grid.Row="0"
+                Grid.Column="0"
+                Command="{Binding NavigateEngineCommand}">
+                Engine
+            </Button>
+            <Button Grid.Row="0" Grid.Column="1">GearBox</Button>
+            <Button Grid.Row="0" Grid.Column="2">AirIntake</Button>
+            <Button Grid.Row="1" Grid.Column="0">Floor</Button>
+            <Button Grid.Row="1" Grid.Column="1">SidePod</Button>
+            <Button Grid.Row="1" Grid.Column="2">Wheel Cover</Button>
+            <Button Grid.Row="2" Grid.Column="0">Front Wing</Button>
+            <Button Grid.Row="2" Grid.Column="1">Rear Wing</Button>
+            <Button Grid.Row="2" Grid.Column="2">Rear Diffuser</Button>
+            <Button Grid.Row="3" Grid.Column="0">Front Suspension</Button>
+            <Button Grid.Row="3" Grid.Column="1">Rear Suspension</Button>
+            <Button Grid.Row="3" Grid.Column="2">Tyres</Button>
+            <Button Grid.Row="4" Grid.Column="0">Steering Wheel</Button>
+            <Button Grid.Row="4" Grid.Column="1">Brakes</Button>
+            <Button Grid.Row="4" Grid.Column="2">Halo</Button>
+        </Grid>
+    </Grid>
 </UserControl>
