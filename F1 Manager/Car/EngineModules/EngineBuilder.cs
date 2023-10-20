@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.EngineModules
 {
-    class ConcreteBuilder : IBuilder
+    class ConcreteEngineBuilder : IEngineBuilder
     {
         private Engine _product;
 
-        public ConcreteBuilder()
+        public ConcreteEngineBuilder()
         {
             _product = new Engine();
         }
@@ -42,7 +42,7 @@ namespace F1_Manager.Car.EngineModules
             return _product;
         }
     }
-    interface IBuilder
+    interface IEngineBuilder
     {
         void BuildICE(ICE ice_);
         void BuildTurbo(Turbo turbo_);

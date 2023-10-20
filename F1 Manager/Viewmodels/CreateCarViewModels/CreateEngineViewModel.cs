@@ -1,4 +1,6 @@
-﻿using F1_Manager.Commands;
+﻿using F1_Manager.Car.EngineModules;
+using F1_Manager.Commands;
+using F1_Manager.Managers;
 using F1_Manager.Stores;
 using System;
 using System.Collections.Generic;
@@ -12,12 +14,11 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 {
 	public class CreateEngineViewModel : ViewModelBase
 	{
-		public string WelcomeMessage => "Car";
-		public ICommand NavigateHomeCommand { get; }
-
+		public string WelcomeMessage { get; set; }
+		public ICommand NavigateBackCommand { get; }
 		public CreateEngineViewModel(NavigationStore navigationStore)
 		{
-			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
+			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
 		}
 	}
 }

@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
 
 namespace F1_Manager.Car
 {
-    public class FrontDownForce
+
+	public class FrontDownForce
     {
         double downForce { get; set; }
         double maxDownForce { get; set; }
@@ -65,6 +69,7 @@ namespace F1_Manager.Car
     {
         public double heat { get; set; }
         public double maxHeat { get; set; }
+
     }
     public class Weight
     {
