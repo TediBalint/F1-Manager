@@ -40,7 +40,7 @@
             Orientation="Vertical">
 
             <Button
-                Command="{Binding NavigatePlayCommand}"
+                Command="{Binding NavigateChooseTrackCommand}"
                 Content="Play"
                 Style="{StaticResource HomeButton}" />
             <Button

@@ -18,6 +18,7 @@ namespace F1_Manager.Viewmodels
 		private readonly NavigationStore _navigationStore;
 
 		public CreateCarManager createCarManager;
+		public TrackManager trackManager;
 		public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
 		public MainViewModel(NavigationStore navigationstore) 
@@ -29,10 +30,15 @@ namespace F1_Manager.Viewmodels
 		private void OnCurrentViewModelChanged()
 		{
 			OnPropertyChanged(nameof(CurrentViewModel));
-			if (_navigationStore.CurrentViewModel.GetType() == typeof(PlayViewModel))
+			Type viewType = _navigationStore.CurrentViewModel.GetType();
+			if (viewType == typeof(PlayViewModel))
 			{
 				createCarManager = new CreateCarManager();
 				Debug.WriteLine("Created Car manager");
+			}
+			else if (viewType == typeof(ChooseTrackViewModel))
+			{
+				trackManager = new TrackManager();
 			}
 		}	
 	}
