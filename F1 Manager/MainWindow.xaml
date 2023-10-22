@@ -5,7 +5,6 @@
     xmlns:carModels="clr-namespace:F1_Manager.Viewmodels.CreateCarViewModels"
     xmlns:carViews="clr-namespace:F1_Manager.Views.CreateCarViews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:F1_Manager"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewmodels="clr-namespace:F1_Manager.Viewmodels"
     xmlns:views="clr-namespace:F1_Manager.Views"
@@ -20,10 +19,10 @@
                 <views:HomeView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:CarViewModel}">
-                <views:CarView />
+                <views:StartView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:PlayViewModel}">
-                <views:PlayView />
+            <DataTemplate DataType="{x:Type viewmodels:StartViewModel}">
+                <views:StartView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:CreateCarViewModel}">
                 <views:CreateCarView />

@@ -20,8 +20,9 @@ namespace F1_Manager.Viewmodels
 	public class ChooseTrackViewModel : ViewModelBase
 	{
 		//private string imagePath = "..\\..\\..";
-		public TrackImage currentTrack;
 
+
+		// OnpropertyChanged
 		private string _currentTrackPath;
 		public string CurrentTrackPath
 		{
@@ -49,11 +50,14 @@ namespace F1_Manager.Viewmodels
 				}
 			}
 		}
-		//public TrackManager trackManager { get; set; }
+
+
+		public TrackImage currentTrack;
+
 		private TrackManager _trackManager;
 
 		public ICommand NavigateHomeCommand { get; }
-		public ICommand NavigateEngineCommand { get; }
+		public ICommand NavigateCreateCarCommand { get; }
 		public ICommand navNext { get; private set; }
 		public ICommand navPrevious { get; private set; }
 
@@ -63,12 +67,12 @@ namespace F1_Manager.Viewmodels
 			_trackManager = new TrackManager();
 			currentTrack = _trackManager.currentTrack;
 			updateCurrentTrack();
-			// Command declaration
 
+			// Command declaration
 			navPrevious = new RelayCommand(navPreviousTrack);
 			navNext = new RelayCommand(navNextTrack);
 			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
-			NavigateEngineCommand = new NavigateCommand<CreateEngineViewModel>(navigationStore, () => new CreateEngineViewModel(navigationStore));
+			NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
 		}
 		private void updateCurrentTrack()
 		{

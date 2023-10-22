@@ -20,7 +20,7 @@ namespace F1_Manager
 		{
 			NavigationStore navigationStore = new NavigationStore();
 			//MainWindow = new MainWindow()
-			navigationStore.CurrentViewModel = new CarViewModel(navigationStore);
+			navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
 			MainWindow = new MainWindow()
 			{
 				DataContext = new MainViewModel(navigationStore)

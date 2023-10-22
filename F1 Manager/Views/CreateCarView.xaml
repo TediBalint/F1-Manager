@@ -31,7 +31,10 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+
+            <!--  row 0  -->
             <Button
                 Grid.Row="0"
                 Grid.Column="0"
@@ -40,18 +43,48 @@
             </Button>
             <Button Grid.Row="0" Grid.Column="1">GearBox</Button>
             <Button Grid.Row="0" Grid.Column="2">AirIntake</Button>
+
+            <!--  row 1  -->
             <Button Grid.Row="1" Grid.Column="0">Floor</Button>
             <Button Grid.Row="1" Grid.Column="1">SidePod</Button>
             <Button Grid.Row="1" Grid.Column="2">Wheel Cover</Button>
+
+            <!--  row 2  -->
             <Button Grid.Row="2" Grid.Column="0">Front Wing</Button>
             <Button Grid.Row="2" Grid.Column="1">Rear Wing</Button>
             <Button Grid.Row="2" Grid.Column="2">Rear Diffuser</Button>
+
+            <!--  row3  -->
             <Button Grid.Row="3" Grid.Column="0">Front Suspension</Button>
             <Button Grid.Row="3" Grid.Column="1">Rear Suspension</Button>
             <Button Grid.Row="3" Grid.Column="2">Tyres</Button>
+
+            <!--  row4  -->
             <Button Grid.Row="4" Grid.Column="0">Steering Wheel</Button>
             <Button Grid.Row="4" Grid.Column="1">Brakes</Button>
             <Button Grid.Row="4" Grid.Column="2">Halo</Button>
+
+            <!--  row5 - Navigation  -->
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Command="{Binding NavigateHomeCommand}">
+                Back
+            </Button>
+
+            <!--  navigate to engine stats screen  -->
+            <Button
+                Grid.Row="5"
+                Grid.Column="1"
+                Command="{Binding NavigateHomeCommand}">
+                Stats
+            </Button>
+            <Button
+                Grid.Row="5"
+                Grid.Column="2"
+                Command="{Binding NavigatePlayCommand}">
+                Done
+            </Button>
         </Grid>
     </Grid>
 </UserControl>

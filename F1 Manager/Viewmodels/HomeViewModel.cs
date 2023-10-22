@@ -20,7 +20,7 @@ namespace F1_Manager.Viewmodels
 		public HomeViewModel(Stores.NavigationStore navigationStore)
         {
             NavigateCarCommand = new NavigateCommand<CarViewModel>(navigationStore, () => new CarViewModel(navigationStore));
-            NavigatePlayCommand = new NavigateCommand<PlayViewModel>(navigationStore, () => new PlayViewModel(navigationStore));
+            NavigatePlayCommand = new NavigateCommand<StartViewModel>(navigationStore, () => new StartViewModel(navigationStore));
             NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
 			NavigateChooseTrackCommand = new NavigateCommand<ChooseTrackViewModel>(navigationStore, () => new ChooseTrackViewModel(navigationStore));
 		}

@@ -15,7 +15,7 @@
             <Setter Property="VerticalAlignment" Value="Bottom" />
             <Setter Property="VerticalContentAlignment" Value="Bottom" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="FontSize" Value="150" />
+            <Setter Property="FontSize" Value="200" />
             <Setter Property="Foreground" Value="#CCC" />
 
             <Setter Property="Template">
@@ -42,9 +42,12 @@
         <Style x:Key="MainButton" TargetType="Button">
             <Setter Property="Background" Value="#333" />
             <Setter Property="Foreground" Value="#bbb" />
-            <Setter Property="FontSize" Value="40" />
-            <Setter Property="Height" Value="50" />
-            <Setter Property="Width" Value="150" />
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -91,6 +94,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Command="{Binding NavigateHomeCommand}"
+            Content="Back"
             Style="{StaticResource MainButton}" />
 
         <Label
@@ -102,7 +106,7 @@
             HorizontalContentAlignment="Center"
             Content="{Binding CurrentTrackName}"
             FontSize="40"
-            Foreground="#CCC" />
+            Foreground="#888" />
 
         <Button
             Grid.Row="2"
@@ -110,7 +114,8 @@
             Margin="20"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            Command="{Binding NavigateEngineCommand}"
+            Command="{Binding NavigateCreateCarCommand}"
+            Content="Choose"
             Style="{StaticResource MainButton}" />
     </Grid>
 </UserControl>

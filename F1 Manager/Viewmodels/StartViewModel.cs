@@ -10,14 +10,14 @@ using System.Windows.Input;
 
 namespace F1_Manager.Viewmodels
 {
-    public class PlayViewModel : ViewModelBase
+    public class StartViewModel : ViewModelBase
     {
         public string WelcomeMessage => "Play";
         public ICommand NavigatePlayCommand { get; }
 
-        public PlayViewModel(NavigationStore navigationStore)
+        public StartViewModel(NavigationStore navigationStore)
         {
-            NavigatePlayCommand = new NavigateCommand<PlayViewModel>(navigationStore, () => new PlayViewModel(navigationStore));
+            NavigatePlayCommand = new NavigateCommand<StartViewModel>(navigationStore, () => new StartViewModel(navigationStore));
         }
     }
 }

@@ -17,11 +17,13 @@ namespace F1_Manager.Viewmodels
 		public string WelcomeMessage => "Car";
 		public ICommand NavigateHomeCommand { get; }
 		public ICommand NavigateEngineCommand { get; }
+		public ICommand NavigatePlayCommand { get; }
 
 		public CreateCarViewModel(NavigationStore navigationStore)
 		{
 			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
 			NavigateEngineCommand = new NavigateCommand<CreateEngineViewModel>(navigationStore, () => new CreateEngineViewModel(navigationStore));
+			NavigatePlayCommand = new NavigateCommand<StartViewModel>(navigationStore, () => new StartViewModel(navigationStore));
 		}
 	}
 }

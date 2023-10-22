@@ -31,9 +31,8 @@ namespace F1_Manager.Viewmodels
 		{
 			OnPropertyChanged(nameof(CurrentViewModel));
 
-
 			Type viewType = _navigationStore.CurrentViewModel.GetType();
-			if (viewType == typeof(PlayViewModel))
+			if (viewType == typeof(StartViewModel))
 			{
 				createCarManager = new CreateCarManager();
 				Debug.WriteLine("Created Car manager");
