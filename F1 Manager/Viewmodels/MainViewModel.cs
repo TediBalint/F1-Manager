@@ -30,6 +30,8 @@ namespace F1_Manager.Viewmodels
 		private void OnCurrentViewModelChanged()
 		{
 			OnPropertyChanged(nameof(CurrentViewModel));
+
+
 			Type viewType = _navigationStore.CurrentViewModel.GetType();
 			if (viewType == typeof(PlayViewModel))
 			{

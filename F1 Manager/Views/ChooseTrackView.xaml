@@ -8,6 +8,7 @@
     d:DesignHeight="1080"
     d:DesignWidth="1920"
     mc:Ignorable="d">
+
     <UserControl.Resources>
         <Style x:Key="ChooseTrackButton" TargetType="Button">
             <Setter Property="Margin" Value="10" />
@@ -36,12 +37,21 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+
+        <Style x:Key="MainButton" TargetType="Button">
+            <Setter Property="Background" Value="#333" />
+            <Setter Property="Foreground" Value="#bbb" />
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="150" />
+        </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.Background>
 
             <!--  have to bind this  C:\Users\Balint\Pictures\ProjectScracth\index.png  -->
-            <ImageBrush ImageSource="{Binding currentTrack.ImageRelativePath}" />
+            <ImageBrush ImageSource="{Binding CurrentTrackPath}" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -54,21 +64,35 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
+
         <!--  mid row  -->
         <Button
             Grid.Row="1"
             Grid.Column="0"
             HorizontalAlignment="Left"
+            Command="{Binding navPrevious}"
             Content="&#x2190;"
             Style="{StaticResource ChooseTrackButton}" />
         <Button
             Grid.Row="1"
             Grid.Column="2"
             HorizontalAlignment="Right"
+            Command="{Binding navNext}"
             Content="&#x2192;"
             Style="{StaticResource ChooseTrackButton}" />
 
+
+
         <!--  bottom row  -->
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding NavigateHomeCommand}"
+            Style="{StaticResource MainButton}" />
+
         <Label
             Grid.Row="2"
             Grid.Column="0"
@@ -76,8 +100,17 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             HorizontalContentAlignment="Center"
-            Content="{Binding currentTrack.TrackName}"
+            Content="{Binding CurrentTrackName}"
             FontSize="40"
             Foreground="#CCC" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="20"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Command="{Binding NavigateEngineCommand}"
+            Style="{StaticResource MainButton}" />
     </Grid>
 </UserControl>
