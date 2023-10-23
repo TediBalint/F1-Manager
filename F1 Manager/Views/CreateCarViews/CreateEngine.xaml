@@ -55,7 +55,7 @@
                 Margin="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Content="Built Your Engine"
+                Content="Build Your Engine"
                 FontFamily="verdana"
                 FontSize="60"
                 FontWeight="Bold"
@@ -129,7 +129,14 @@
                 Style="{StaticResource StatLabel}" />
 
 
-            <!--  Column 8  -->
+            <!--  Row 7  -->
+            <Label
+                Grid.Row="7"
+                Grid.Column="0"
+                Content=""
+                Style="{StaticResource StatLabel}" />
+
+            <!--  Row 8  -->
             <Button
                 Grid.Row="8"
                 Grid.Column="0"

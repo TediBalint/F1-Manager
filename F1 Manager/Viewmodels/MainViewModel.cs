@@ -20,11 +20,14 @@ namespace F1_Manager.Viewmodels
 		public CreateCarManager createCarManager;
 		public TrackManager trackManager;
 		public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+		
+		
 
 		public MainViewModel(NavigationStore navigationstore) 
 		{
 			_navigationStore = navigationstore;
-			_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;	
+			_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+			
 		}
 
 		private void OnCurrentViewModelChanged()

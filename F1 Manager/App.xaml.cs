@@ -15,9 +15,11 @@ namespace F1_Manager
 	/// </summary>
 	public partial class App : Application
 	{
+		public ISharedService sharedService;
 		
 		protected override void OnStartup(StartupEventArgs e)
 		{
+			sharedService = new SharedService();
 			NavigationStore navigationStore = new NavigationStore();
 			//MainWindow = new MainWindow()
 			navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);

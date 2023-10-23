@@ -14,10 +14,14 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 {
 	public class CreateEngineViewModel : ViewModelBase
 	{
-		public string WelcomeMessage { get; set; }
+		public string PowerMessage { get; set; }
+		public string FuelMessage { get; set; }
+		public string EnergyMessage { get; set; }
+		public string WeightMessage { get; set; }
 		public ICommand NavigateBackCommand { get; }
 		public CreateEngineViewModel(NavigationStore navigationStore)
 		{
+			
 			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
 		}
 	}
