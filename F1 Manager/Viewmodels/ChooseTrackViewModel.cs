@@ -62,7 +62,7 @@ namespace F1_Manager.Viewmodels
 		public ICommand navPrevious { get; private set; }
 
 
-		public ChooseTrackViewModel(NavigationStore navigationStore)
+		public ChooseTrackViewModel(ISharedService sharedService)
 		{
 			_trackManager = new TrackManager();
 			currentTrack = _trackManager.currentTrack;
@@ -71,8 +71,8 @@ namespace F1_Manager.Viewmodels
 			// Command declaration
 			navPrevious = new RelayCommand(navPreviousTrack);
 			navNext = new RelayCommand(navNextTrack);
-			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
-			NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
+			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(sharedService, () => new HomeViewModel(sharedService));
+			NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
 		}
 		private void updateCurrentTrack()
 		{

@@ -19,11 +19,11 @@ namespace F1_Manager.Viewmodels
 		public ICommand NavigateEngineCommand { get; }
 		public ICommand NavigatePlayCommand { get; }
 
-		public CreateCarViewModel(NavigationStore navigationStore)
+		public CreateCarViewModel(ISharedService sharedService)
 		{
-			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
-			NavigateEngineCommand = new NavigateCommand<CreateEngineViewModel>(navigationStore, () => new CreateEngineViewModel(navigationStore));
-			NavigatePlayCommand = new NavigateCommand<StartViewModel>(navigationStore, () => new StartViewModel(navigationStore));
+			NavigateHomeCommand = new NavigateCommand<HomeViewModel>(sharedService, () => new HomeViewModel(sharedService));
+			NavigateEngineCommand = new NavigateCommand<CreateEngineViewModel>(sharedService, () => new CreateEngineViewModel(sharedService));
+			NavigatePlayCommand = new NavigateCommand<StartViewModel>(sharedService, () => new StartViewModel(sharedService));
 		}
 	}
 }

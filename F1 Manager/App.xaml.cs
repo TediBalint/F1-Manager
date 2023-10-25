@@ -20,12 +20,12 @@ namespace F1_Manager
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			sharedService = new SharedService();
-			NavigationStore navigationStore = new NavigationStore();
+			sharedService.navigationStore = new NavigationStore();
+			sharedService.navigationStore.CurrentViewModel = new HomeViewModel(sharedService);
 			//MainWindow = new MainWindow()
-			navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
 			MainWindow = new MainWindow()
 			{
-				DataContext = new MainViewModel(navigationStore)
+				DataContext = new MainViewModel(sharedService)
 			};
 			MainWindow.Show();
 

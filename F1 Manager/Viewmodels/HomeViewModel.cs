@@ -1,4 +1,5 @@
 ﻿using F1_Manager.Commands;
+using F1_Manager.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +12,19 @@ namespace F1_Manager.Viewmodels
 {
 	public class HomeViewModel : ViewModelBase
 	{
+
 		public string welcomeMessage => "Welcome to my applciation";
 		public ICommand NavigateCarCommand { get; }
         public ICommand NavigatePlayCommand { get; }
 		public ICommand NavigateCreateCarCommand { get; }
 		public ICommand NavigateChooseTrackCommand { get; }
 
-		public HomeViewModel(Stores.NavigationStore navigationStore)
+		public HomeViewModel(ISharedService sharedService)
         {
-            NavigateCarCommand = new NavigateCommand<CarViewModel>(navigationStore, () => new CarViewModel(navigationStore));
-            NavigatePlayCommand = new NavigateCommand<StartViewModel>(navigationStore, () => new StartViewModel(navigationStore));
-            NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
-			NavigateChooseTrackCommand = new NavigateCommand<ChooseTrackViewModel>(navigationStore, () => new ChooseTrackViewModel(navigationStore));
+            NavigateCarCommand = new NavigateCommand<CarViewModel>(sharedService, () => new CarViewModel(sharedService));
+            NavigatePlayCommand = new NavigateCommand<StartViewModel>(sharedService, () => new StartViewModel(sharedService));
+            NavigateCreateCarCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
+			NavigateChooseTrackCommand = new NavigateCommand<ChooseTrackViewModel>(sharedService, () => new ChooseTrackViewModel(sharedService));
 		}
     }
 }

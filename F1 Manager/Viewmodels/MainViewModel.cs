@@ -15,17 +15,16 @@ namespace F1_Manager.Viewmodels
 	
 	public class MainViewModel : ViewModelBase
 	{
+		private readonly ISharedService _sharedService;
 		private readonly NavigationStore _navigationStore;
-
-		public CreateCarManager createCarManager;
-		public TrackManager trackManager;
+		//public CreateCarManager createCarManager;
+		//public TrackManager trackManager;
 		public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 		
-		
-
-		public MainViewModel(NavigationStore navigationstore) 
+		public MainViewModel(ISharedService sharedService) 
 		{
-			_navigationStore = navigationstore;
+			_sharedService = sharedService;
+			_navigationStore = _sharedService.navigationStore;
 			_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
 			
 		}
@@ -33,17 +32,6 @@ namespace F1_Manager.Viewmodels
 		private void OnCurrentViewModelChanged()
 		{
 			OnPropertyChanged(nameof(CurrentViewModel));
-
-			Type viewType = _navigationStore.CurrentViewModel.GetType();
-			if (viewType == typeof(StartViewModel))
-			{
-				createCarManager = new CreateCarManager();
-				Debug.WriteLine("Created Car manager");
-			}
-			else if (viewType == typeof(ChooseTrackViewModel))
-			{
-				trackManager = new TrackManager();
-			}
 		}	
 	}
 }

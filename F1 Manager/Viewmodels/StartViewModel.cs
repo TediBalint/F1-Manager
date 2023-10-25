@@ -13,11 +13,11 @@ namespace F1_Manager.Viewmodels
     public class StartViewModel : ViewModelBase
     {
         public string WelcomeMessage => "Play";
-        public ICommand NavigatePlayCommand { get; }
+        public ICommand NavigateHomeCommand { get; }
 
-        public StartViewModel(NavigationStore navigationStore)
+        public StartViewModel(ISharedService sharedService)
         {
-            NavigatePlayCommand = new NavigateCommand<StartViewModel>(navigationStore, () => new StartViewModel(navigationStore));
+            NavigateHomeCommand = new NavigateCommand<HomeViewModel>(sharedService, () => new HomeViewModel(sharedService));
         }
     }
 }

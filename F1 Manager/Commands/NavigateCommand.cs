@@ -12,17 +12,17 @@ namespace F1_Manager.Commands
 	public class NavigateCommand<TViewModel>: CommandBase	
 		where TViewModel : ViewModelBase
 	{	
-		private readonly NavigationStore _navigationStore;
+		private readonly ISharedService _sharedService;
 		private readonly Func<TViewModel> _createViewModel;
 
-		public NavigateCommand(NavigationStore navigatedStore, Func<TViewModel> createViewModel)
+		public NavigateCommand(ISharedService sharedService, Func<TViewModel> createViewModel)
 		{
-			_navigationStore = navigatedStore;
+			_sharedService = sharedService;
 			_createViewModel = createViewModel;
 		}
 		public override void Execute(object parameter)
 		{
-			_navigationStore.CurrentViewModel = _createViewModel();
+			_sharedService.navigationStore.CurrentViewModel = _createViewModel();
 		}
 	}
 }

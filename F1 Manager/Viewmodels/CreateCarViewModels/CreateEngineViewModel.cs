@@ -19,10 +19,9 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 		public string EnergyMessage { get; set; }
 		public string WeightMessage { get; set; }
 		public ICommand NavigateBackCommand { get; }
-		public CreateEngineViewModel(NavigationStore navigationStore)
+		public CreateEngineViewModel(ISharedService sharedService)
 		{
-			
-			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(navigationStore, () => new CreateCarViewModel(navigationStore));
+			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
 		}
 	}
 }
