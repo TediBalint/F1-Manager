@@ -50,21 +50,15 @@ namespace F1_Manager.Viewmodels
 				}
 			}
 		}
-
-
-		public TrackImage currentTrack;
-
-		private TrackManager _trackManager;
-
+		private readonly TrackManager _trackManager;
+		private TrackImage currentTrack;
 		public ICommand NavigateHomeCommand { get; }
 		public ICommand NavigateCreateCarCommand { get; }
-		public ICommand navNext { get; private set; }
-		public ICommand navPrevious { get; private set; }
-
-
+		public ICommand navNext { get; }
+		public ICommand navPrevious { get; }
 		public ChooseTrackViewModel(ISharedService sharedService)
 		{
-			_trackManager = new TrackManager();
+			_trackManager = sharedService.trackManager;
 			currentTrack = _trackManager.currentTrack;
 			updateCurrentTrack();
 

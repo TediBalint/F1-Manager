@@ -28,7 +28,6 @@ namespace F1_Manager
 				DataContext = new MainViewModel(sharedService)
 			};
 			MainWindow.Show();
-
 			base.OnStartup(e);
 		}
 	}

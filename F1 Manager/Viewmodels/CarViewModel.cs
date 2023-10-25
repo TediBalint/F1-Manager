@@ -12,7 +12,6 @@ namespace F1_Manager.Viewmodels
 {
 	public class CarViewModel: ViewModelBase
 	{
-		public string WelcomeMessage => "Car";
 		public ICommand NavigateHomeCommand { get; }
 		
 		public CarViewModel(ISharedService sharedService) 

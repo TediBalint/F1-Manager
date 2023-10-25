@@ -12,7 +12,6 @@ namespace F1_Manager.Viewmodels
 {
     public class StartViewModel : ViewModelBase
     {
-        public string WelcomeMessage => "Play";
         public ICommand NavigateHomeCommand { get; }
 
         public StartViewModel(ISharedService sharedService)

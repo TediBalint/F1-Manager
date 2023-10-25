@@ -17,18 +17,13 @@ namespace F1_Manager.Viewmodels
 	{
 		private readonly ISharedService _sharedService;
 		private readonly NavigationStore _navigationStore;
-		//public CreateCarManager createCarManager;
-		//public TrackManager trackManager;
 		public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
-		
 		public MainViewModel(ISharedService sharedService) 
 		{
 			_sharedService = sharedService;
 			_navigationStore = _sharedService.navigationStore;
 			_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-			
 		}
-
 		private void OnCurrentViewModelChanged()
 		{
 			OnPropertyChanged(nameof(CurrentViewModel));

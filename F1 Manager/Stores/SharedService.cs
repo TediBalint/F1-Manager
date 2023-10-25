@@ -1,4 +1,6 @@
-﻿using F1_Manager.Viewmodels;
+﻿using F1_Manager.Images.TrackImages;
+using F1_Manager.Managers;
+using F1_Manager.Viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +12,16 @@ namespace F1_Manager.Stores
 	public interface ISharedService
 	{
 		NavigationStore navigationStore { get; set; }
-		string SharedProperty { get; set; }
+		TrackManager trackManager { get; set; }
 		void SharedMethod();
 
 	}
-
 	public class SharedService : ISharedService
 	{
-		public string SharedProperty { get; set; }
+		
+		public TrackManager trackManager { get; set; } = new TrackManager();
 		public NavigationStore navigationStore { get; set; }
-		public SharedService() 
+		public SharedService()
 		{
 			NavigationStore navigationStore = new NavigationStore();
 			navigationStore.CurrentViewModel = new HomeViewModel(this);
