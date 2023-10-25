@@ -14,7 +14,6 @@ namespace F1_Manager.Viewmodels
 {
 	public class CreateCarViewModel : ViewModelBase
 	{
-		public string WelcomeMessage => "Car";
 		public ICommand NavigateHomeCommand { get; }
 		public ICommand NavigateEngineCommand { get; }
 		public ICommand NavigatePlayCommand { get; }

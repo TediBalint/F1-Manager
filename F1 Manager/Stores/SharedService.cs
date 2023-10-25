@@ -13,6 +13,7 @@ namespace F1_Manager.Stores
 	{
 		NavigationStore navigationStore { get; set; }
 		TrackManager trackManager { get; set; }
+		CreateCarManager createCarManager { get; set; }
 		void SharedMethod();
 
 	}
@@ -20,6 +21,7 @@ namespace F1_Manager.Stores
 	{
 		
 		public TrackManager trackManager { get; set; } = new TrackManager();
+		public CreateCarManager createCarManager { get; set; } = new CreateCarManager();
 		public NavigationStore navigationStore { get; set; }
 		public SharedService()
 		{
