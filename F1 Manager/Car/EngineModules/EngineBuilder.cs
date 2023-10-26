@@ -36,9 +36,9 @@ namespace F1_Manager.Car.EngineModules
         {
             _product.controlElectronics = ce_;
         }
-
 		public Engine Build()
         {
+            _product.parts = new List<object> {_product.ice, _product.turbo, _product.mguh, _product.mguk, _product.controlElectronics};
             return _product;
         }
     }

@@ -32,7 +32,6 @@ namespace F1_Manager.Car.EngineModules
             MGUK mguk = new MGUK(power, heat, heat, durability, weight, ers, ers);
             ControlElectronics controlElectronics = new ControlElectronics(durability, durability);
 
-
 			_builder.BuildICE(ice);
             _builder.BuildTurbo(turbo);
             _builder.BuildMGUH(mguh);
