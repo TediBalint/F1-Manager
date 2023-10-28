@@ -133,7 +133,7 @@
             <Label
                 Grid.Row="7"
                 Grid.Column="0"
-                Content=""
+                Content="{Binding PowerMessage}"
                 Style="{StaticResource StatLabel}" />
 
             <!--  Row 8  -->

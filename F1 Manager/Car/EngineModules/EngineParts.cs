@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace F1_Manager.Car.EngineModules
 {
-    public class DefaultEnginePart
+    public class EnginePart
     {
         public Power power;
         public Heat heat;
@@ -11,7 +11,7 @@ namespace F1_Manager.Car.EngineModules
         public Durability durability;
         public Weight weight;
 
-        public DefaultEnginePart(Power power_, Heat heat_, Heat maxHeat_, Durability durability_, Weight weight_)
+        public EnginePart(Power power_, Heat heat_, Heat maxHeat_, Durability durability_, Weight weight_)
         {
             power = power_;
             heat = heat_;
@@ -20,7 +20,7 @@ namespace F1_Manager.Car.EngineModules
             weight = weight_;
         }
     }
-    public class ICE : DefaultEnginePart
+    public class ICE : EnginePart
     {
         public FuelConsumption consumption;
         public ICE(Power power, Heat heat, Heat maxHeat, Durability durability, Weight weight, FuelConsumption consumption_) : 
@@ -29,7 +29,7 @@ namespace F1_Manager.Car.EngineModules
             consumption = consumption_;
         }
     }
-    public class MGUK : DefaultEnginePart
+    public class MGUK : EnginePart
     {
         public Ers ers;
         public Ers ersRecharge;
@@ -41,7 +41,7 @@ namespace F1_Manager.Car.EngineModules
             ersRecharge = ersRecharge_;
         }
     }
-    public class MGUH : DefaultEnginePart
+    public class MGUH : EnginePart
     {
         public Ers ers;
         public Ers ersRecharge;
@@ -53,7 +53,7 @@ namespace F1_Manager.Car.EngineModules
             ersRecharge = ersRecharge_;
         }
     }
-    public class Turbo : DefaultEnginePart
+    public class Turbo : EnginePart
     {
         public RearGrip rearGripLoss;
 

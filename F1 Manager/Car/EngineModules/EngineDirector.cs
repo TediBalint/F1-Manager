@@ -18,19 +18,11 @@ namespace F1_Manager.Car.EngineModules
         public Engine buildNullEngine()
         {
             // parts
-            Ers ers = new Ers();
-            Heat heat = new Heat();
-            Durability durability = new Durability();
-            Power power = new Power();
-            Weight weight = new Weight();
-            FuelConsumption fuelConsumption = new FuelConsumption();
-            RearGrip rearGrip = new RearGrip();
-
-			ICE ice = new ICE(power, heat, heat, durability, weight, fuelConsumption);
-			Turbo turbo = new Turbo(power, heat, heat, durability, weight, rearGrip);
-			MGUH mguh = new MGUH(power, heat, heat, durability, weight, ers, ers);
-            MGUK mguk = new MGUK(power, heat, heat, durability, weight, ers, ers);
-            ControlElectronics controlElectronics = new ControlElectronics(durability, durability);
+			ICE ice = new ICE(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new FuelConsumption());
+			Turbo turbo = new Turbo(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new RearGrip());
+			MGUH mguh = new MGUH(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new Ers(), new Ers());
+			MGUK mguk = new MGUK(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new Ers(), new Ers());
+			ControlElectronics controlElectronics = new ControlElectronics(new Durability(), new Durability());
 
 			_builder.BuildICE(ice);
             _builder.BuildTurbo(turbo);

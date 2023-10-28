@@ -21,6 +21,7 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 		public ICommand NavigateBackCommand { get; }
 		public CreateEngineViewModel(ISharedService sharedService)
 		{
+			PowerMessage = sharedService.createCarManager.thisEngine.GetPower().ToString();
 			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
 		}
 	}

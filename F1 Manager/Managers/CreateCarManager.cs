@@ -12,6 +12,8 @@ namespace F1_Manager.Managers
 		public Engine thisEngine;
 		public CreateCarManager() { 
 			thisEngine = CreateEngine();
+			thisEngine.ice.power.power = 100;
+			thisEngine.turbo.power.power = 300;
 		}
 		public Engine CreateEngine()
 		{
