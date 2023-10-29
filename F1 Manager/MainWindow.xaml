@@ -30,6 +30,10 @@
             <DataTemplate DataType="{x:Type carModels:CreateEngineViewModel}">
                 <carViews:CreateEngine />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type carModels:CarPropertyEditViewModel}">
+                <carViews:CarPropertyEditView />
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewmodels:ChooseTrackViewModel}">
                 <views:ChooseTrackView />
             </DataTemplate>
