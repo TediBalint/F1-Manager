@@ -1,7 +1,9 @@
 ﻿using F1_Manager.Car.EngineModules;
+using F1_Manager.EditCarPartClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +13,7 @@ namespace F1_Manager.Managers
 	{
 		public Engine thisEngine;
 		public List<object> CarParts;
+		
 		public CreateCarManager() { 
 			thisEngine = CreateEngine();
 			//thisEngine.ice.power.power = 100;
@@ -20,7 +23,8 @@ namespace F1_Manager.Managers
 			//thisEngine.ice.weight.weight = 100;
 			CarParts = new List<object>() {};
 			CarParts.AddRange(thisEngine.parts);
-		}
+			
+		}		
 		public Engine CreateEngine()
 		{
 			ConcreteEngineBuilder _engineBuilder = new ConcreteEngineBuilder();

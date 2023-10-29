@@ -42,7 +42,7 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 
 			
 			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
-			NavigateIceCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService));
+			NavigateIceCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.ice));
 		}
 	}
 }

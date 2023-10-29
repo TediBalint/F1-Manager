@@ -37,12 +37,10 @@ namespace F1_Manager.EditCarPartClasses
 		private void Inc()
 		{
             Val ++;
-			Debug.WriteLine(val);
 		}
 		private void Dec()
 		{
             Val --;
-			Debug.WriteLine(Val);
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
