@@ -10,6 +10,7 @@ namespace F1_Manager.Managers
 	public class CreateCarManager
 	{
 		public Engine thisEngine;
+		public List<object> CarParts;
 		public CreateCarManager() { 
 			thisEngine = CreateEngine();
 			//thisEngine.ice.power.power = 100;
@@ -17,6 +18,8 @@ namespace F1_Manager.Managers
 			//thisEngine.mguh.ersRecharge.ers = 100;
 			//thisEngine.mguk.ersRecharge.ers = 200;
 			//thisEngine.ice.weight.weight = 100;
+			CarParts = new List<object>() {};
+			CarParts.AddRange(thisEngine.parts);
 		}
 		public Engine CreateEngine()
 		{

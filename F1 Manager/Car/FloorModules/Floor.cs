@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.FloorModules
 {
-	internal class Floor
+	public class Floor
 	{
+		Weight weight;
 	}
 }

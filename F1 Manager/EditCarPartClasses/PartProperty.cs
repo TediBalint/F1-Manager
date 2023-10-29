@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace F1_Manager.EditCarPartClasses
 				if (val != value)
 				{
 					val = value;
-					RaisePropertyChanged("Value");
+					RaisePropertyChanged("Val");
 				}
 			}
 		}
@@ -31,14 +32,17 @@ namespace F1_Manager.EditCarPartClasses
         {
             increase = new RelayCommand(Inc);
 			decrease = new RelayCommand(Dec);
+			Name = "PropertyName";
 		}
 		private void Inc()
 		{
-            val ++;
+            Val ++;
+			Debug.WriteLine(val);
 		}
 		private void Dec()
 		{
-            val --;
+            Val --;
+			Debug.WriteLine(Val);
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;

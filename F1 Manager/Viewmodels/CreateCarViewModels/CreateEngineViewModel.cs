@@ -19,6 +19,7 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 		public string ErsMessage { get; set; }
 		public string WeightMessage { get; set; }
 		public ICommand NavigateBackCommand { get; }
+		public ICommand NavigateIceCommand { get; }
 		public CreateEngineViewModel(ISharedService sharedService)
 		{
 			// may need onpropertyChanged for these
@@ -41,6 +42,7 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 
 			
 			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
+			NavigateIceCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService));
 		}
 	}
 }
