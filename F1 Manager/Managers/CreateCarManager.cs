@@ -14,6 +14,9 @@ namespace F1_Manager.Managers
 			thisEngine = CreateEngine();
 			thisEngine.ice.power.power = 100;
 			thisEngine.turbo.power.power = 300;
+			thisEngine.mguh.ersRecharge.ers = 100;
+			thisEngine.mguk.ersRecharge.ers = 200;
+			thisEngine.ice.weight.weight = 100;
 		}
 		public Engine CreateEngine()
 		{

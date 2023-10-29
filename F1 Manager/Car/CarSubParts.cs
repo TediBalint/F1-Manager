@@ -63,7 +63,7 @@ namespace F1_Manager.Car
     public class Ers
     {
         public double ers { get; set; }
-        public double maxers { get; set; }
+        public double maxErs { get; set; }
     }
     public class Heat
     {
@@ -74,6 +74,6 @@ namespace F1_Manager.Car
     public class Weight
     {
         public double weight { get; set; }
-        public double maxWeight { get; set; }
+        public double minWeight { get; set; }
     }
 }

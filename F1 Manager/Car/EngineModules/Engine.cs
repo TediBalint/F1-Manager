@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -23,6 +24,38 @@ namespace F1_Manager.Car.EngineModules
         {
 			return parts.OfType<EnginePart>().Sum(obj => obj.power.maxPower);
         }
+        public double GetErsRecharge()
+        {
+            return GetSum("ersRecharge", "ers");
+        }
+		public double GetMaxErsRecharge()
+		{
+			return GetSum("ersRecharge", "maxErs");
+		}
+        public double GetWeight() {
+            return GetSum("weight", "weight");
+        }
+		public double GetMinWeight()
+		{
+			return GetSum("weight", "minWeight");
+		}
+        public double GetConsumption()
+        {
+            return GetSum("consumption", "fuelConsumption");
+        }
+		public double GetMinConsumption()
+		{
+			return GetSum("consumption", "minFuelConsumption");
+		}
+
+		private double GetSum(string subclassName, string propertyName)
+        {
+            return parts.Where(part => part.GetType().GetProperty(subclassName) != null).Sum(part => GetHelper(part, subclassName, propertyName));
+		}
+        private double GetHelper(object obj, string subclassName, string propertyName) {
+            object subclassObj = obj.GetType().GetProperty(subclassName).GetValue(obj);
+            return (double)subclassObj.GetType().GetProperty(propertyName).GetValue(subclassObj);
+		}
 	}
 
     

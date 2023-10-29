@@ -20,7 +20,7 @@ namespace F1_Manager.Car.EngineModules
             // parts
 			ICE ice = new ICE(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new FuelConsumption());
 			Turbo turbo = new Turbo(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new RearGrip());
-			MGUH mguh = new MGUH(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new Ers(), new Ers());
+			MGUH mguh = new MGUH(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new Ers(), new Ers(), new FuelConsumption());
 			MGUK mguk = new MGUK(new Power(), new Heat(), new Heat(), new Durability(), new Weight(), new Ers(), new Ers());
 			ControlElectronics controlElectronics = new ControlElectronics(new Durability(), new Durability());
 

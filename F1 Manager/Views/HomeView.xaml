@@ -52,7 +52,7 @@
                 Content="Settings"
                 Style="{StaticResource HomeButton}" />
             <Button
-                Command="{Binding NavigateCarCommand}"
+                Command="{Binding QuitCommand}"
                 Content="Quit"
                 Style="{StaticResource HomeButton}" />
         </StackPanel>
