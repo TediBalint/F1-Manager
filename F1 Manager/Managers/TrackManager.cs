@@ -40,17 +40,13 @@ namespace F1_Manager.Managers
 		}
 		private TrackImage[] getTrackImages()
 		{
-			//fsdafsdf
-			//need to fix
 			string imagesPath = AppDomain.CurrentDomain.BaseDirectory;
 			while 
 			(!Directory.GetDirectories(imagesPath)
 				.Select(Path.GetFileName).ToArray().Contains("F1 Manager")
 			)
 			{
-				//Debug.WriteLine(string.Join(',', Directory.GetDirectories(imagesPath)));
 				imagesPath = Path.GetDirectoryName(imagesPath);
-				//Debug.WriteLine(imagesPath);
 			}
 			imagesPath = Path.Combine(imagesPath, "F1 Manager","Images","TrackImages");
 			string[] files = Array.FindAll(Directory.GetFiles(imagesPath), file => Path.GetExtension(file) != ".cs");
