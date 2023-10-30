@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.FrontWingModules
 {
-	internal class FrontWing
+	public class FrontWing
 	{
+		public Weight weight { get;set; }
+		public FrontDownForce frontDownForce { get; set; }
+		public RearGrip rearGripLoss { get; set; }
+		public Drag drag { get; set; }
+		public Durability durability { get; set; }
 	}
 }

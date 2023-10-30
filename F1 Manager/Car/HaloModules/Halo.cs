@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.HaloModules
 {
-	internal class Halo
+	public class Halo
 	{
+		public Weight weight { get; set; } = new Weight();
+		public Drag drag { get; set; } = new Drag();
+		public RearDownForce rearDownForce { get; set; } = new RearDownForce();	
+		public Durability durability { get; set; } = new Durability();
 	}
 }

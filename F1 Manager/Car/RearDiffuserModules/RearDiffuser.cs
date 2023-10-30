@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.RearDiffuserModules
 {
-	internal class RearDiffuser
+	public class RearDiffuser
 	{
+		public Weight weight { get; set; } = new Weight();
+		public RearDownForce rearDownForce { get; set; } = new RearDownForce();
+		public Drag drag { get; set; } = new Drag();
 	}
 }

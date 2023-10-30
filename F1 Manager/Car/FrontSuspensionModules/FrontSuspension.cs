@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.FrontSuspensionModules
 {
-	internal class FrontSuspension
+	public class FrontSuspension
 	{
+		public Weight weight { get; set; }
+		public FrontDownForce frontDownForce { get; set; }
+		public FrontGrip frontMechanicalGrip { get; set; }
+		public RearGrip rearMechanicalGrip { get; set; }
+		public Drag drag { get; set; }
+		public Durability durability { get; set; }
+		public Flex flex { get; set; }
 	}
 }

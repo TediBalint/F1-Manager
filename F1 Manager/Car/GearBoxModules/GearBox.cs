@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.GearBoxModules
 {
-	internal class GearBox
+	public class GearBox
 	{
+
 	}
 }
