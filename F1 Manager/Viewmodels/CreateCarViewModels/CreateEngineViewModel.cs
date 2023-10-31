@@ -19,6 +19,32 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 		public string ErsMessage { get; set; }
 		public string WeightMessage { get; set; }
 
+		private double _iceMaxPercent;
+		public double iceMaxPercent
+		{
+			get { return _iceMaxPercent; }
+			set
+			{
+				if (_iceMaxPercent != value)
+				{
+					_iceMaxPercent = value;
+					OnPropertyChanged(nameof(iceMaxPercent));
+				}
+			}
+		}
+		//private string _currentTrackPath;
+		//public string CurrentTrackPath
+		//{
+		//	get { return _currentTrackPath; }
+		//	set
+		//	{
+		//		if (_currentTrackPath != value)
+		//		{
+		//			_currentTrackPath = value;
+		//			OnPropertyChanged(nameof(CurrentTrackPath));
+		//		}
+		//	}
+		//}
 		public ICommand NavigateBackCommand { get; }
 
 		public ICommand NavigateIceCommand { get; }
@@ -56,5 +82,6 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 			NavigateCECommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.controlElectronics));
 			NavigateTurboCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.turbo));
 		}
+		
 	}
 }
