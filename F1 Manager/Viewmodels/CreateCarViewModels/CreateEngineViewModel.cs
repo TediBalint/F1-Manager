@@ -18,8 +18,15 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 		public string FuelMessage { get; set; }
 		public string ErsMessage { get; set; }
 		public string WeightMessage { get; set; }
+
 		public ICommand NavigateBackCommand { get; }
+
 		public ICommand NavigateIceCommand { get; }
+		public ICommand NavigateMGUHCommand { get; }
+		public ICommand NavigateMGUKCommand { get; }
+		public ICommand NavigateCECommand { get; }
+		public ICommand NavigateTurboCommand { get; }
+
 		public CreateEngineViewModel(ISharedService sharedService)
 		{
 			// may need onpropertyChanged for these
@@ -40,9 +47,14 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 			ErsMessage = $"{ersRecharge}/{maxErsRecharge}";
 			WeightMessage = $"{weight}/{minWeight}";
 
-			
+			// Commands
 			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
+
 			NavigateIceCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.ice));
+			NavigateMGUHCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.mguh));
+			NavigateMGUKCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.mguk));
+			NavigateCECommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.controlElectronics));
+			NavigateTurboCommand = new NavigateCommand<CarPropertyEditViewModel>(sharedService, () => new CarPropertyEditViewModel(sharedService, sharedService.createCarManager.thisEngine.turbo));
 		}
 	}
 }
