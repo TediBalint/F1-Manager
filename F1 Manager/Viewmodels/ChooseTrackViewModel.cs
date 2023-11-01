@@ -26,30 +26,17 @@ namespace F1_Manager.Viewmodels
 		private string _currentTrackPath;
 		public string CurrentTrackPath
 		{
-			get { return _currentTrackPath; }
-			set
-			{
-				if (_currentTrackPath != value)
-				{
-					_currentTrackPath = value;
-					OnPropertyChanged(nameof(CurrentTrackPath));
-				}
-			}
+			get => _currentTrackPath;
+			set => SetProperty(ref _currentTrackPath, value);
 		}
 
 		private string _currentTrackName;
 		public string CurrentTrackName
 		{
-			get { return _currentTrackName; }
-			set
-			{
-				if (_currentTrackName != value)
-				{
-					_currentTrackName = value;
-					OnPropertyChanged(nameof(CurrentTrackName));
-				}
-			}
+			get => _currentTrackName;
+			set => SetProperty(ref _currentTrackName, value);
 		}
+
 		private readonly TrackManager _trackManager;
 		private TrackImage currentTrack;
 		public ICommand NavigateHomeCommand { get; }

@@ -28,27 +28,24 @@
 
             </Style>
             <Style TargetType="{x:Type Slider}">
+
+                <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Slider">
                             <Grid>
-                                <!--  Customize the slider's track  -->
-                                <Rectangle
-                                    x:Name="PART_SelectionRange"
-                                    Height="20"
-                                    Margin="20,0,20,0"
-                                    Fill="{TemplateBinding Foreground}" />
-
-                                <!--  Customize the slider's thumb  -->
+                                <!--  Customize the track here  -->
+                                <Rectangle x:Name="PART_SelectionRange" Fill="Blue" />
                                 <Thumb
-                                    x:Name="PART_Track"
-                                    Width="{TemplateBinding Width}"
-                                    Height="20"
-                                    Background="{TemplateBinding Background}"
-                                    Focusable="False">
+                                    x:Name="Thumb"
+                                    Width="18"
+                                    Height="18">
                                     <Thumb.Template>
                                         <ControlTemplate TargetType="Thumb">
-                                            <Ellipse Fill="{TemplateBinding Background}" />
+                                            <Ellipse
+                                                Width="18"
+                                                Height="18"
+                                                Fill="Red" />
                                         </ControlTemplate>
                                     </Thumb.Template>
                                 </Thumb>
@@ -56,12 +53,6 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="VerticalAlignment" Value="Center" />
-                <Setter Property="Maximum" Value="100" />
-                <Setter Property="Minimum" Value="0" />
-                <Setter Property="TickFrequency" Value="0.1" />
-                <Setter Property="IsSnapToTickEnabled" Value="True" />
-                <Setter Property="Height" Value="50" />
             </Style>
         </Grid.Resources>
         <Grid>
@@ -107,17 +98,26 @@
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
                 <Label
                     Grid.Column="0"
                     Content="Max(%)"
                     Style="{StaticResource StatLabel}" />
                 <Slider
+                    Name="iceMaxPercentSlider"
                     Grid.Row="1"
                     Grid.Column="1"
-                    Grid.ColumnSpan="3" />
-                <Label />
+                    Grid.ColumnSpan="3"
+                    IsEnabled="True"
+                    Maximum="100"
+                    Minimum="1"
+                    TickFrequency="0.1"
+                    Value="{Binding iceMaxPercent}" />
+                <Label
+                    Grid.Column="4"
+                    Content="{Binding ElementName=iceMaxPercentSlider, Path=Value}"
+                    Style="{StaticResource StatLabel}" />
             </Grid>
 
 

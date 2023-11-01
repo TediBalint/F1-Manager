@@ -14,23 +14,62 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 {
 	public class CreateEngineViewModel : ViewModelBase
 	{
-		public string PowerMessage { get; set; }
-		public string FuelMessage { get; set; }
-		public string ErsMessage { get; set; }
-		public string WeightMessage { get; set; }
+		// OnPropertyChanged
+
+		private string _powerMessage;
+		public	string PowerMessage
+		{
+			get => _powerMessage;
+			set => SetProperty(ref _powerMessage, value);
+		}
+		private string _fuelMessage;
+		public string FuelMessage
+		{
+			get => _fuelMessage;
+			set => SetProperty(ref _fuelMessage, value);
+		}
+		private string _ersMessage;
+		public string ErsMessage
+		{
+			get => _ersMessage;
+			set => SetProperty(ref _ersMessage, value);
+		}
+		private string _weightMessage;
+		public string WeightMessage
+		{
+			get => _weightMessage; 
+			set => SetProperty(ref _weightMessage, value);
+		}
+
 
 		private double _iceMaxPercent;
 		public double iceMaxPercent
 		{
-			get { return _iceMaxPercent; }
-			set
-			{
-				if (_iceMaxPercent != value)
-				{
-					_iceMaxPercent = value;
-					OnPropertyChanged(nameof(iceMaxPercent));
-				}
-			}
+			get => _iceMaxPercent;
+			set => SetProperty(ref _iceMaxPercent, value);
+		}
+		private double _mguhMaxPercent;
+		public double mguhMaxPercent{
+			get => _mguhMaxPercent;
+			set => SetProperty(ref _mguhMaxPercent, value);
+		}
+		private double _mgukMaxPercent;
+		public double mgukMaxPercent
+		{
+			get => _mguhMaxPercent; 
+			set => SetProperty(ref _mgukMaxPercent, value);
+		}
+		private double _ceMaxPercent;
+		public double ceMaxPercent
+		{
+			get => _ceMaxPercent;
+			set => SetProperty(ref _ceMaxPercent, value);
+		}
+		private double _turboMaxPercent;
+		public double turboMaxPercent
+		{
+			get => _turboMaxPercent;
+			set => SetProperty(ref _turboMaxPercent, value);
 		}
 		//private string _currentTrackPath;
 		//public string CurrentTrackPath
@@ -56,22 +95,10 @@ namespace F1_Manager.Viewmodels.CreateCarViewModels
 		public CreateEngineViewModel(ISharedService sharedService)
 		{
 			// may need onpropertyChanged for these
-			double power = sharedService.createCarManager.thisEngine.GetPower();
-			double maxPower = sharedService.createCarManager.thisEngine.GetMaxPower();
-
-			double ersRecharge = sharedService.createCarManager.thisEngine.GetErsRecharge();
-			double maxErsRecharge = sharedService.createCarManager.thisEngine.GetMaxErsRecharge();
-
-			double fuelCons = sharedService.createCarManager.thisEngine.GetConsumption();
-			double minFuelCons = sharedService.createCarManager.thisEngine.GetMinConsumption();
-
-			double weight = sharedService.createCarManager.thisEngine.GetWeight();
-			double minWeight = sharedService.createCarManager.thisEngine.GetMinWeight();
-
-			PowerMessage = $"{power}/{maxPower}";
-			FuelMessage = $"{fuelCons}/{minFuelCons}";
-			ErsMessage = $"{ersRecharge}/{maxErsRecharge}";
-			WeightMessage = $"{weight}/{minWeight}";
+			PowerMessage = $"{sharedService.createCarManager.thisEngine.GetPower()}/{sharedService.createCarManager.thisEngine.GetMaxPower()}";
+			FuelMessage = $"{sharedService.createCarManager.thisEngine.GetConsumption()}/{sharedService.createCarManager.thisEngine.GetMinConsumption()}";
+			ErsMessage = $"{sharedService.createCarManager.thisEngine.GetErsRecharge()}/{sharedService.createCarManager.thisEngine.GetMaxErsRecharge()}";
+			WeightMessage = $"{sharedService.createCarManager.thisEngine.GetWeight()}/{sharedService.createCarManager.thisEngine.GetMinWeight()}";
 
 			// Commands
 			NavigateBackCommand = new NavigateCommand<CreateCarViewModel>(sharedService, () => new CreateCarViewModel(sharedService));
