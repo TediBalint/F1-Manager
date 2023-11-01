@@ -8,9 +8,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Car\TyreModules\FrontTyres\" />
-    <Folder Include="Car\TyreModules\RearTyres\" />
-  </ItemGroup>
-
 </Project>

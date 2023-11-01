@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.SteeringWheelModules
 {
-	internal class SteeringWheel
+	public class SteeringWheel
 	{
+		public Weight weight { get; set; }
+		public Drivability drivability { get; set; }
 	}
 }

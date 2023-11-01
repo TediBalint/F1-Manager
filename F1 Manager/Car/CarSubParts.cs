@@ -76,4 +76,9 @@ namespace F1_Manager.Car
         public double weight { get; set; }
         public double minWeight { get; set; }
     }
+    public class Drivability
+    {
+        public double drivability { get; set; }
+        public double maxDrivability { get; set; }
+    }
 }

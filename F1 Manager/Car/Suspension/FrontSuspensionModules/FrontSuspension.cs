@@ -1,4 +1,5 @@
-﻿using System;
+﻿using F1_Manager.Car.Suspension;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.FrontSuspensionModules
 {
-	public class FrontSuspension
+	public class FrontSuspension : Suspensions
 	{
 		public Weight weight { get; set; }
 		public FrontDownForce frontDownForce { get; set; }
