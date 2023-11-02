@@ -19,12 +19,4 @@ namespace F1_Manager.Car
         }
     }
 
-
-    public class FrontSuspension
-    {
-        public FrontSuspension()
-        {
-
-        }
-    }
 }

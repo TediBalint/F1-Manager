@@ -10,12 +10,20 @@ namespace F1_Manager.Car.EngineModules
 {
     public class Engine
     {
+        public string Name { get; set; } 
         public ICE ice { get; set; }
         public Turbo turbo { get; set; }
         public MGUH mguh { get; set; }
         public MGUK mguk { get; set; }
         public ControlElectronics controlElectronics { get; set; }
         public List<object> parts { get; set; }
+
+       
+        public Setup setup { get; set; } = new Setup();
+
+
+
+        // Pov: Linq
 		public double GetPower()
 		{
 			return parts.OfType<EnginePart>().Sum(obj => obj.power.power);
@@ -50,11 +58,20 @@ namespace F1_Manager.Car.EngineModules
 
 		private double GetSum(string subclassName, string propertyName)
         {
-            return parts.Where(part => part.GetType().GetProperty(subclassName) != null).Sum(part => GetHelper(part, subclassName, propertyName));
+            return parts.Where(part => part.GetType().GetProperty(subclassName) != null).Sum(part => GetSumHelper(part, subclassName, propertyName));
 		}
-        private double GetHelper(object obj, string subclassName, string propertyName) {
+        private double GetSumHelper(object obj, string subclassName, string propertyName) {
             object subclassObj = obj.GetType().GetProperty(subclassName).GetValue(obj);
             return (double)subclassObj.GetType().GetProperty(propertyName).GetValue(subclassObj);
+		}
+		public class Setup
+		{
+			public double fuelModeMultiplier { get; set; }
+            public bool canRestart { get; set; }
+            public Dictionary<string , EnergyMode> energyModes { get; set; } = new Dictionary<string, EnergyMode>() {
+                {"", new EnergyMode()}
+            };
+
 		}
 	}
 
