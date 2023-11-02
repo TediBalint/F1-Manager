@@ -10,5 +10,6 @@ namespace F1_Manager.Car.SteeringWheelModules
 	{
 		public Weight weight { get; set; }
 		public Drivability drivability { get; set; }
+		public double modeSwitchTime;
 	}
 }

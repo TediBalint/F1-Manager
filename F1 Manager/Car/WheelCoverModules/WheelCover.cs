@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace F1_Manager.Car.WheelCoverModules
 {
-	internal class WheelCover
+	public class WheelCover
 	{
+		public Weight weight { get;set; }
+		public Drag drag { get;set; }
+		public FrontDownForce frontDownForce { get;set; }
 	}
 }

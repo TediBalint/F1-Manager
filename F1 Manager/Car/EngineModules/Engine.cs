@@ -68,9 +68,8 @@ namespace F1_Manager.Car.EngineModules
 		public class Setup
 		{
 			public double fuelModeMultiplier { get; set; }
-            public bool canRestart { get; set; }
+            public bool canRestart { get; set; } = false;
             public Dictionary<string, EnergyMode> energyModes { get; set; } = CarStatics.defaultEnergy;
-
 		}
 	}
 
