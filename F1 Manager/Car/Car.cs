@@ -12,7 +12,7 @@ namespace F1_Manager.Car
     {
         public FrontWing frontWing;
         public Engine engine;
-
+        public double gripFactor;
         public Car()
         {
 
