@@ -12,6 +12,8 @@ namespace F1_Manager.Car.EngineModules
     public class Engine
     {
         public string Name { get; set; } 
+        public double rpm { get; set; } 
+        public double maxrpm { get; set; }
         public ICE ice { get; set; }
         public Turbo turbo { get; set; }
         public MGUH mguh { get; set; }
@@ -19,9 +21,7 @@ namespace F1_Manager.Car.EngineModules
         public ControlElectronics controlElectronics { get; set; }
         public List<object> parts { get; set; }
 
-       
         public Setup setup { get; set; } = new Setup();
-
 
 
         // Pov: Linq
