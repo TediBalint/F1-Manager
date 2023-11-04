@@ -1,5 +1,7 @@
 ﻿using F1_Manager.Car.EngineModules;
 using F1_Manager.Car.GearBoxModules;
+using F1_Manager.Car.TyreModules.FrontTyres;
+using F1_Manager.Car.TyreModules.RearTyres;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,14 @@ namespace F1_Manager.Car
         public FrontWing frontWing;
         public Engine engine;
         public GearBox gearBox;
+
+        public FrontTyre frontLeftTyre { get; set; }
+        public FrontTyre frontRightTyre { get; set; }
+        public RearTyre rearLeftTyre { get;set; }
+        public RearTyre rearRightTyre { get; set; }
+
+
+
         public double gripFactor;
         public double throttlePercent { get; set; }
         public double wheelRadius { get; set; } = 0.4572;

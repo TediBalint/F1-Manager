@@ -11,6 +11,14 @@ namespace F1_Manager.Car.TyreModules
 		public double wear { get; set; }
 		public double coreTemp { get; set; }
 		public double surfaceTemp { get; set; }
-		public double pressure { get; set; }
+		public double currentPressure { get; set; }
+		public double radius { get; set; }
+		public Setup setup { get; set; } = new Setup();
+		public class Setup
+		{
+			public double pressure { get; set; } = 19.5;
+		}
 	}
+
+	
 }
