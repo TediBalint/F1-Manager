@@ -2,6 +2,7 @@
 using F1_Manager.Car.GearBoxModules;
 using F1_Manager.Car.TyreModules.FrontTyres;
 using F1_Manager.Car.TyreModules.RearTyres;
+using F1_Manager.Statics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,12 @@ namespace F1_Manager.Car
 
         
 
-        public double gripFactor;
+        public double gripFactor { get; set; }
         public double throttlePercent { get; set; }
-        public double wheelRadius { get; set; } = 0.4572;
+        public double brakePercent { get; set; } 
+        public double wheelRadius { get; set; } = CarStatics.defaultWheelRadius;
         public double currentPower { get; set; }
-        public double currentSpeed { get; set; }
+        public double currentSpeed { get; set; } // m/s
 
 		public Car()
         {
@@ -52,16 +54,40 @@ namespace F1_Manager.Car
             double speed = wheelRadius * angular_velocity * gearBox.currentGear.gearRatio; 
             return speed;
         }
+        private void updateWeelRadius()
+        {
+            
+        }
+        private double getCentripetalAcceleration()
+        {
+            return 0;
+        }
+        private double getGripFactor()
+        {
+            return 0;
+        }
         public void Accelerate()
         {
             double maxTorque = getTorque();
-            double rpmPercent = engine.rpm / engine.maxrpm * 100;
-            double deltaRpm = throttlePercent / 100 * maxTorque - (engine.rpm * 0.1) - (gearBox.currentGear.frictionCoefficient * engine.rpm);
+            double currentRpmPercent = engine.rpm / engine.maxrpm * 100;
+            double deltaRpm = throttlePercent / 100 * maxTorque - (currentRpmPercent * 0.1) - (gearBox.currentGear.frictionCoefficient * currentRpmPercent);
             engine.rpm += deltaRpm;
             engine.rpm = Math.Min(engine.rpm, engine.maxrpm);
             currentPower = getPower();
             currentSpeed = getSpeed();
 		}
+        public void Corner(double radius, double angle)
+        {
+
+        }
+        public void Straight(double length)
+        {
+
+        }
+        public void Brake()
+        {
+
+        }
 	}
 
 }

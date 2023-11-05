@@ -10,7 +10,7 @@ namespace F1_Manager.Statics
 {
 	public static class CarStatics
 	{
-		
+		public static double defaultWheelRadius = 0.4572;
 		public static Dictionary<string, EnergyMode> defaultEnergy = new Dictionary<string, EnergyMode>()
 		{
 			{"Attack", new EnergyMode("Attack", 5, 1.2, 1.2, 1.4)},
