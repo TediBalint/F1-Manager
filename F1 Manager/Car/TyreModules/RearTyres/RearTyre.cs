@@ -1,4 +1,5 @@
-﻿using System;
+﻿using F1_Manager.Statics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace F1_Manager.Car.TyreModules.RearTyres
     {
 		public RearGrip rearGrip{ get; set; }
 		public Durability durability { get; set; }
+		public Setup setup { get; set; } = new Setup(CarStatics.defaultSetup.rearPressure);
 	}
 }

@@ -11,6 +11,7 @@ namespace F1_Manager.Car.EngineModules
 {
     public class Engine
     {
+
         public string Name { get; set; } 
         public double rpm { get; set; } 
         public double maxrpm { get; set; }

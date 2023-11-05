@@ -21,16 +21,25 @@ namespace F1_Manager.Statics
 		};		
 		public static Gear[] defaultGears =
 		{
-			new Gear(-1, 14.7, 0.01, 'R'), 
+			new Gear(-1, defaultSetup.gearRatios[0], 0.01, 'R'), 
 			new Gear(0, 0, 0.01, 'N'),
-			new Gear(1, 14.7, 0.01),
-			new Gear(2, 11.71, 0.015),
-			new Gear(3, 9.68, 0.02),
-			new Gear(4, 8.09, 0.025),
-			new Gear(5, 6.93, 0.0275),
-			new Gear(6, 6.05, 0.03),
-			new Gear(7, 5.34, 0.0325),
-			new Gear(8, 4.75, 0.035)
+			new Gear(1, defaultSetup.gearRatios[0], 0.01),
+			new Gear(2, defaultSetup.gearRatios[1], 0.015),
+			new Gear(3, defaultSetup.gearRatios[2], 0.02),
+			new Gear(4, defaultSetup.gearRatios[3], 0.025),
+			new Gear(5, defaultSetup.gearRatios[4], 0.0275),
+			new Gear(6, defaultSetup.gearRatios[5], 0.03),
+			new Gear(7, defaultSetup.gearRatios[6], 0.0325),
+			new Gear(8, defaultSetup.gearRatios[7], 0.035)
 		};
+		public static class defaultSetup
+		{
+			public static double frontPressure = 14; //PSI
+			public static double rearPressure = 14;
+			public static double frontWingAngle = 30;
+			public static double rearWingAngle = 30;
+			public static double[] gearRatios = { 14.7, 11.71, 9.68, 8.09, 6.93, 6.05, 5.34, 4.75 };
+		}
+		
 	}
 }

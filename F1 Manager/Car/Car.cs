@@ -16,13 +16,16 @@ namespace F1_Manager.Car
         public FrontWing frontWing;
         public Engine engine;
         public GearBox gearBox;
+        public class Tyres
+        {
+			public FrontTyre frontLeftTyre { get; set; }
+			public FrontTyre frontRightTyre { get; set; }
+			public RearTyre rearLeftTyre { get; set; } 
+			public RearTyre rearRightTyre { get; set; }
+		}
+        public Tyres tyres{ get; set; } = new Tyres();
 
-        public FrontTyre frontLeftTyre { get; set; }
-        public FrontTyre frontRightTyre { get; set; }
-        public RearTyre rearLeftTyre { get;set; }
-        public RearTyre rearRightTyre { get; set; }
-
-
+        
 
         public double gripFactor;
         public double throttlePercent { get; set; }
@@ -32,7 +35,7 @@ namespace F1_Manager.Car
 
 		public Car()
         {
-
+            
         }
         private double getTorque()
         {

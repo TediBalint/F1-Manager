@@ -1,4 +1,5 @@
-﻿using System;
+﻿using F1_Manager.Statics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,21 @@ namespace F1_Manager.Car.TyreModules
 		public double surfaceTemp { get; set; }
 		public double currentPressure { get; set; }
 		public double radius { get; set; }
-		public Setup setup { get; set; } = new Setup();
+		
 		public class Setup
 		{
-			public double pressure { get; set; } = 19.5;
+			public double pressure { get; set; }
+			public Setup(double? _pressure)
+			{
+				if (_pressure.HasValue)
+				{
+					pressure = _pressure.Value;
+				}
+				else
+				{
+					pressure = CarStatics.defaultSetup.frontPressure;
+				}
+			}
 		}
 	}
 
