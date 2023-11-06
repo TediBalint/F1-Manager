@@ -54,6 +54,10 @@ namespace F1_Manager.Car
             double speed = wheelRadius * angular_velocity * gearBox.currentGear.gearRatio; 
             return speed;
         }
+        private double getActiveDownForce()
+        {
+            return 0;
+        }
         private void updateWeelRadius()
         {
             
@@ -61,6 +65,10 @@ namespace F1_Manager.Car
         private double getCentripetalAcceleration()
         {
             return 0;
+        }
+        private double getGrip()
+        {
+            return 1000;
         }
         private double getGripFactor()
         {
